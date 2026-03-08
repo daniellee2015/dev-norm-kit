@@ -107,39 +107,56 @@ DNK 当前处于 **lite 引导阶段**。
 
 ## 安装与快速开始
 
-### 安装
+### 方式 A：项目本地安装（推荐）
 
 ```bash
 npm install -D @waoooolab/dev-norm-kit
+npx dnk-tui
 ```
 
-或不安装直接运行：
+### 方式 B：全局安装
 
 ```bash
-npx @waoooolab/dev-norm-kit init --target . --provider all_providers --install-scope project
+npm install -g @waoooolab/dev-norm-kit
+dnk-tui
 ```
 
-### 三步开始
+### Quick Start 流程
 
-1. 初始化基线和 Provider 落地产物。
-2. 执行守卫校验。
-3. 按需单独同步 Provider 配置或 MCP 工具。
+1. 启动 `dnk-tui`，选择语言并设置目标项目目录。
+2. 在 TUI 中执行 `Initialize`，生成基线与 Provider 配置。
+3. 初始化完成后，在同一项目目录启动你的 Provider CLI：
+   `claude` / `codex` / `gemini` / `opencode`
+4. 合并或发布前执行守卫校验：
+
+```bash
+npm run norm:verify
+```
+
+### 临时运行（不安装）
+
+```bash
+npx -y -p @waoooolab/dev-norm-kit dnk-tui
+```
+
+### 纯命令行方式（不用 TUI）
+
+如果你更偏向纯命令：
 
 ```bash
 npx dnk init --target . --provider all_providers --install-scope project
 npm run norm:verify
-npx dnk provider-sync --target . --provider codex_cli
-npx dnk mcp-install --target . --mcp-install-dry-run
 ```
 
 <br>
 
 ## 核心命令
 
-日常主要用下面 4 个：
+日常主要使用下面这些命令：
 
 | 目标 | 命令 |
 | --- | --- |
+| 启动交互式 TUI | `npx dnk-tui` |
 | 初始化基线与 Provider 落地 | `npx dnk init --target . --provider all_providers --install-scope project` |
 | 仅同步 Provider 配置（增量） | `npx dnk provider-sync --target . --provider codex_cli` |
 | 安装或预演 MCP 工具 | `npx dnk mcp-install --target . --mcp-install-dry-run` |

@@ -109,29 +109,45 @@ It works best when used to initialize or normalize **new projects** first, then 
 
 ## Install and Quick Start
 
-### Install
+### Method A: Local Install (Recommended)
 
 ```bash
 npm install -D @waoooolab/dev-norm-kit
+npx dnk-tui
 ```
 
-Or run without installation:
+### Method B: Global Install
 
 ```bash
-npx @waoooolab/dev-norm-kit init --target . --provider all_providers --install-scope project
+npm install -g @waoooolab/dev-norm-kit
+dnk-tui
 ```
 
-### Start in 3 Steps
+### Quick Start Flow
 
-1. Initialize baseline and provider outputs.
-2. Run guard verification.
-3. Sync provider config or MCP tools only when needed.
+1. Start `dnk-tui`, select language, and set target project path.
+2. Run `Initialize` in TUI to generate baseline + provider config.
+3. After initialization, start your provider CLI in the same project directory:
+   `claude` / `codex` / `gemini` / `opencode`
+4. Before merge/release, run guard verification:
+
+```bash
+npm run norm:verify
+```
+
+### No-Install Temporary Run
+
+```bash
+npx -y -p @waoooolab/dev-norm-kit dnk-tui
+```
+
+### Pure CLI (No TUI)
+
+If you prefer command-only flow:
 
 ```bash
 npx dnk init --target . --provider all_providers --install-scope project
 npm run norm:verify
-npx dnk provider-sync --target . --provider codex_cli
-npx dnk mcp-install --target . --mcp-install-dry-run
 ```
 
 <br>
@@ -142,6 +158,7 @@ Use only these for day-to-day work:
 
 | Goal | Command |
 | --- | --- |
+| Start interactive TUI | `npx dnk-tui` |
 | Bootstrap baseline + provider output | `npx dnk init --target . --provider all_providers --install-scope project` |
 | Sync provider config only (incremental) | `npx dnk provider-sync --target . --provider codex_cli` |
 | Install or preview MCP tools | `npx dnk mcp-install --target . --mcp-install-dry-run` |
