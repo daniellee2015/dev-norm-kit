@@ -3,7 +3,7 @@
   <p>Vibe coding in norm：在保持创意编码速度的同时，让每一次本地 ACP 执行都标准化、可守卫、可审查。</p>
   <p>
     <a href="https://github.com/daniellee2015/dev-norm-kit/tags"><img src="https://img.shields.io/github/v/tag/daniellee2015/dev-norm-kit?sort=semver&style=flat-square&label=Repo%20Tag" alt="仓库 Tag"></a>
-    <a href="https://www.npmjs.com/search?q=dev-norm-kit"><img src="https://img.shields.io/badge/NPM%20Version-v0.1.0-70D800?style=flat-square" alt="NPM 版本"></a>
+    <a href="https://www.npmjs.com/search?q=dev-norm-kit"><img src="https://img.shields.io/badge/NPM%20Version-v0.1.2-70D800?style=flat-square" alt="NPM 版本"></a>
     <a href="https://github.com/daniellee2015/dev-norm-kit"><img src="https://img.shields.io/badge/License-MIT-70D800?style=flat-square" alt="License"></a>
     <a href="https://github.com/daniellee2015/dev-norm-kit"><img src="https://img.shields.io/badge/Profile-Standardized%20ACP%20Lite-70D800?style=flat-square" alt="配置形态"></a>
   </p>
@@ -148,7 +148,7 @@ npx dnk mcp-install --target . --mcp-install-dry-run
 在 monorepo 内也可直接运行：
 
 ```bash
-node bin/dnk.mjs init --target /path/to/project
+node ops/profiles/dev-norm-kit/bin/dnk.mjs init --target /path/to/project
 ```
 
 <br>

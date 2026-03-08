@@ -3,7 +3,7 @@
   <p>Vibe coding in norm: move fast in creative flow while every local ACP run stays standardized, guarded, and review-ready.</p>
   <p>
     <a href="https://github.com/daniellee2015/dev-norm-kit/tags"><img src="https://img.shields.io/github/v/tag/daniellee2015/dev-norm-kit?sort=semver&style=flat-square&label=Repo%20Tag" alt="Repo Tag"></a>
-    <a href="https://www.npmjs.com/search?q=dev-norm-kit"><img src="https://img.shields.io/badge/NPM%20Version-v0.1.0-70D800?style=flat-square" alt="NPM Version"></a>
+    <a href="https://www.npmjs.com/search?q=dev-norm-kit"><img src="https://img.shields.io/badge/NPM%20Version-v0.1.2-70D800?style=flat-square" alt="NPM Version"></a>
     <a href="https://github.com/daniellee2015/dev-norm-kit"><img src="https://img.shields.io/badge/License-MIT-70D800?style=flat-square" alt="License"></a>
     <a href="https://github.com/daniellee2015/dev-norm-kit"><img src="https://img.shields.io/badge/Profile-Standardized%20ACP%20Lite-70D800?style=flat-square" alt="Profile"></a>
   </p>
@@ -150,7 +150,7 @@ Use only these for day-to-day work:
 In this monorepo you can also run:
 
 ```bash
-node bin/dnk.mjs init --target /path/to/project
+node ops/profiles/dev-norm-kit/bin/dnk.mjs init --target /path/to/project
 ```
 
 <br>

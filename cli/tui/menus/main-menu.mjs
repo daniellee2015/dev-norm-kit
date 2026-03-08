@@ -3,6 +3,7 @@ import { MAIN_ACTIONS } from "../constants.mjs";
 import { t } from "../i18n.mjs";
 import { menuHints } from "../ui/page.mjs";
 import { buildMenuLabel } from "../ui/menu-label.mjs";
+import { DNK_VERSION } from "../version.mjs";
 
 function normalizeValue(result) {
   if (result && typeof result === "object" && "value" in result) {
@@ -74,7 +75,7 @@ export async function showMainMenu(state) {
       description: t(state, "subtitle"),
       descriptionGradientStart: "\x1b[38;2;46;63;20m",
       descriptionGradientEnd: "\x1b[38;2;111;141;50m",
-      version: "0.1.0",
+      version: DNK_VERSION,
       menuTitle: t(state, "mainTitle"),
     },
     mainArea: {

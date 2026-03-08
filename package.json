@@ -1,20 +1,24 @@
 {
   "name": "@waoooolab/dev-norm-kit",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "private": false,
   "type": "module",
   "description": "Dev Norm Kit bootstrap profile for single ACP CLI mode",
   "bin": {
     "dnk": "bin/dnk.mjs",
+    "dnk-tui": "bin/dnk-tui.mjs",
     "dev-norm": "bin/dev-norm.mjs",
     "acp-cli-dev-norm": "bin/acp-cli-dev-norm.mjs"
   },
   "files": [
     "bin",
+    "cli",
     "docs",
     "scripts",
+    "test",
     "templates",
     "README.md",
+    "README.zh-CN.md",
     "boundary-profile.json"
   ],
   "scripts": {

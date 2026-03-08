@@ -25,6 +25,7 @@ import {
 } from "./actions/config-action.mjs";
 import { buildMenuLabel } from "./ui/menu-label.mjs";
 import { loadUserSettings, saveUserLanguagePreference } from "./services/settings-service.mjs";
+import { DNK_VERSION } from "./version.mjs";
 
 const THEME_PRIMARY_HEX = "C3FF3D";
 const THEME_SECONDARY_HEX = "70D800";
@@ -367,7 +368,7 @@ async function selectLanguageOnBootstrap(styleConfig) {
       description: "Choose interface language",
       descriptionGradientStart: "\x1b[38;2;31;45;12m",
       descriptionGradientEnd: "\x1b[38;2;55;83;25m",
-      version: "0.1.0",
+      version: DNK_VERSION,
       menuTitle: "Select Language",
     },
     mainArea: {
