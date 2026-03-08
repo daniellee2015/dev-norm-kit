@@ -14,6 +14,9 @@ Session start rule:
 2. no explicit keyword (`dnk`, `/dev-clarify`) is required to begin DNK conversation flow.
 3. first turn must begin in `conversation` stage and collect readiness fields:
    `objective`, `done_when`, `constraints`, `output_format`.
+4. if user request implies development/product implementation intent, DNK conversation flow must start automatically.
+5. `conversation` stage cannot produce final architecture or execution plan; collect/confirm readiness first.
+6. transition to `running` requires explicit user confirmation after readiness is complete.
 
 ## 2) Read Order (Authoritative Sources)
 

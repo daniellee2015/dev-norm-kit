@@ -1,9 +1,22 @@
 description = "Clarify scope in conversation mode before execution."
 prompt = """
 Do not run shell commands in this stage.
-Collect and confirm:
-1. objective
-2. done_when
-3. constraints
-4. output_format
+Stay in DNK `conversation` stage.
+
+Apply this even when user does not say `dnk`.
+If user intent implies development/build work, auto-trigger this clarify flow.
+
+Output format:
+1. `DNK_MODE: ACTIVE`
+2. `DNK_ROLE: lead`
+3. `DNK_STAGE: conversation`
+4. `READINESS` with these fields:
+   - objective
+   - done_when
+   - constraints
+   - output_format
+5. `MISSING_FIELDS` list
+6. Ask only targeted clarification questions for missing fields.
+
+Before readiness is complete, do NOT output full architecture, full implementation plan, or run commands.
 """
