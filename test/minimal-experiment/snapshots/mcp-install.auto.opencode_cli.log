@@ -1,0 +1,5 @@
+
+> dev-norm-kit-minimal-9itiit@1.0.0 norm:mcp:install
+> node scripts/acp/install_mcp_tools.mjs --dry-run
+
+mcp-install dry-run packages: websearch-mcp, @upstash/context7-mcp, @playwright/mcp

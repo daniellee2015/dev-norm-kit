@@ -1,0 +1,53 @@
+{
+  "schema_version": "acp_command_pack.v1",
+  "commands": [
+    {
+      "command_id": "cmd.workflow.conversation",
+      "phase": "conversation_prepare",
+      "run": "npm run norm:acp:conversation",
+      "required": true
+    },
+    {
+      "command_id": "cmd.workflow.ready",
+      "phase": "readiness_check",
+      "run": "npm run norm:acp:ready",
+      "required": true
+    },
+    {
+      "command_id": "cmd.workflow.run",
+      "phase": "task_start",
+      "run": "npm run norm:acp:start",
+      "required": true
+    },
+    {
+      "command_id": "cmd.workflow.verify",
+      "phase": "task_finish",
+      "run": "npm run norm:acp:finish",
+      "required": true
+    },
+    {
+      "command_id": "cmd.norm.registry-guard",
+      "phase": "session_start",
+      "run": "npm run norm:registry:guard",
+      "required": true
+    },
+    {
+      "command_id": "cmd.norm.lifecycle-guard",
+      "phase": "task_start",
+      "run": "npm run norm:lifecycle:guard",
+      "required": true
+    },
+    {
+      "command_id": "cmd.norm.verify",
+      "phase": "task_finish",
+      "run": "npm run norm:verify",
+      "required": true
+    },
+    {
+      "command_id": "cmd.workflow.mcp",
+      "phase": "tooling",
+      "run": "npm run norm:mcp:guard && npm run norm:mcp:list -- --json",
+      "required": true
+    }
+  ]
+}

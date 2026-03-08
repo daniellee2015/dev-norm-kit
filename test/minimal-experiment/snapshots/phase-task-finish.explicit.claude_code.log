@@ -1,0 +1,70 @@
+
+> dev-norm-kit-minimal-izxs17@1.0.0 norm:acp:task-finish
+> node scripts/acp/run_phase.mjs --phase task_finish
+
+acp-phase-runner plan: {"phase":"task_finish","provider_id":"claude_code","route":"native_hook_or_wrapper","command_ids":["cmd.norm.verify"],"command_count":1,"dry_run":false}
+
+> dev-norm-kit-minimal-izxs17@1.0.0 norm:verify
+> npm run norm:docs:guard && npm run norm:registry:guard && npm run norm:norm-doc:guard && npm run norm:invariant:guard && npm run norm:model:guard && npm run norm:frontend:guard && npm run norm:naming:guard && npm run norm:length:guard && npm run norm:dev:guard && npm run norm:lifecycle:guard && npm run norm:acp:guard && npm run norm:mcp:guard
+
+
+> dev-norm-kit-minimal-izxs17@1.0.0 norm:docs:guard
+> node scripts/guards/check_docs_structure.mjs
+
+docs-structure summary: failures=0
+
+> dev-norm-kit-minimal-izxs17@1.0.0 norm:registry:guard
+> node scripts/guards/check_registry_integrity.mjs
+
+registry-integrity summary: failures=0
+
+> dev-norm-kit-minimal-izxs17@1.0.0 norm:norm-doc:guard
+> node scripts/guards/check_norm_pointer_only.mjs
+
+norm-pointer-only summary: failures=0
+
+> dev-norm-kit-minimal-izxs17@1.0.0 norm:invariant:guard
+> node scripts/guards/check_invariant_core.mjs
+
+invariant-core summary: warnings=6 failures=0
+
+> dev-norm-kit-minimal-izxs17@1.0.0 norm:model:guard
+> node scripts/guards/check_backend_model_baseline.mjs
+
+backend-model-baseline summary: failures=0
+
+> dev-norm-kit-minimal-izxs17@1.0.0 norm:frontend:guard
+> node scripts/guards/check_frontend_model_baseline.mjs
+
+frontend-model-baseline summary: failures=0
+
+> dev-norm-kit-minimal-izxs17@1.0.0 norm:naming:guard
+> node scripts/guards/check_naming_convention.mjs
+
+naming-convention summary: warnings=0 failures=0
+
+> dev-norm-kit-minimal-izxs17@1.0.0 norm:length:guard
+> node scripts/guards/check_length_guard.mjs
+
+length-guard summary: warnings=0 failures=0
+
+> dev-norm-kit-minimal-izxs17@1.0.0 norm:dev:guard
+> node scripts/guards/check_development_slots.mjs
+
+development-slots summary: failures=0
+
+> dev-norm-kit-minimal-izxs17@1.0.0 norm:lifecycle:guard
+> node scripts/guards/check_task_lifecycle_hooks.mjs
+
+task-lifecycle-hooks summary: failures=0
+
+> dev-norm-kit-minimal-izxs17@1.0.0 norm:acp:guard
+> node scripts/guards/check_acp_pack_compat.mjs
+
+acp-pack-compat summary: failures=0
+
+> dev-norm-kit-minimal-izxs17@1.0.0 norm:mcp:guard
+> node scripts/guards/check_mcp_toolkit_compat.mjs
+
+mcp-toolkit-compat summary: failures=0
+acp-phase-runner summary: failures=0

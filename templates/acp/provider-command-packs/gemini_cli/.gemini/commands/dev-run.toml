@@ -1,0 +1,4 @@
+description = "Start execution stage."
+prompt = """
+!{npm run norm:dev:run}
+"""

@@ -1,0 +1,12 @@
+
+> dev-norm-kit-minimal-izxs17@1.0.0 norm:mcp:list
+> node scripts/acp/list_mcp_tools.mjs
+
+provider_id=claude_code
+tool.search.web capability=web_search npm_package=websearch-mcp mode=native_or_wrapper handler=mcp_open_websearch_or_cli_wrapper
+tool.docs.context capability=documentation_context npm_package=@upstash/context7-mcp mode=native_or_wrapper handler=mcp_context7_or_cli_wrapper
+tool.code.semantic capability=semantic_code_ops npm_package=- mode=native_or_wrapper handler=mcp_serena_or_cli_wrapper
+tool.repo.knowledge capability=repository_knowledge npm_package=- mode=native_or_wrapper handler=mcp_deepwiki_or_cli_wrapper
+tool.browser.playwright capability=browser_testing npm_package=@playwright/mcp mode=native_or_wrapper handler=mcp_playwright_or_npx_wrapper
+tool.search.repo capability=search npm_package=- mode=native_or_wrapper handler=mcp_native_search_or_rg_wrapper
+tool.test.runner capability=testing npm_package=- mode=wrapper handler=npm_test_wrapper

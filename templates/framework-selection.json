@@ -1,0 +1,21 @@
+{
+  "schema_version": "framework_selection.v1",
+  "selection_principles": {
+    "open_source_first": true,
+    "avoid_reinventing_wheel": true,
+    "latest_scan_required": true,
+    "require_user_confirmation": true
+  },
+  "decision_record": {
+    "confirmed_with_user": false,
+    "confirmed_at": "",
+    "notes": ""
+  },
+  "categories": {
+    "protocol_interop": [],
+    "contract_interface": [],
+    "engineering_supply_chain": [],
+    "governance_risk": [],
+    "observability": []
+  }
+}

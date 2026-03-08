@@ -1,0 +1,81 @@
+{
+  "schema_version": "acp_provider_profile.v1",
+  "provider_id": "gemini_cli",
+  "capability_flags": {
+    "lifecycle_hooks": "wrapper",
+    "delegation_subagent": false,
+    "delegation_multi_agent": false,
+    "skills_registry": false,
+    "custom_commands": true,
+    "structured_noninteractive": true
+  },
+  "context_management": {
+    "instruction_sources": [
+      "GEMINI.md",
+      "GEMINI.md imports",
+      "global GEMINI.md"
+    ],
+    "delegation_strategy": "single_agent_primary_with_tooling",
+    "context_isolation_strategy": "hierarchical_instruction_scope"
+  },
+  "mcp_compat": {
+    "transport_mode": "native_or_wrapper",
+    "tool_routes": {
+      "tool.search.web": {
+        "mode": "native_or_wrapper",
+        "handler": "mcp_open_websearch_or_npx_wrapper"
+      },
+      "tool.docs.context": {
+        "mode": "native_or_wrapper",
+        "handler": "mcp_context7_or_npx_wrapper"
+      },
+      "tool.code.semantic": {
+        "mode": "native_or_wrapper",
+        "handler": "mcp_serena_or_uvx_wrapper"
+      },
+      "tool.repo.knowledge": {
+        "mode": "native_or_wrapper",
+        "handler": "mcp_deepwiki_or_remote_wrapper"
+      },
+      "tool.browser.playwright": {
+        "mode": "native_or_wrapper",
+        "handler": "mcp_playwright_or_npx_wrapper"
+      }
+    },
+    "fallback_mode": "single_agent_human_in_the_loop"
+  },
+  "unit_tool_compat": {
+    "tool_routes": {
+      "tool.search.repo": {
+        "mode": "wrapper",
+        "handler": "rg_wrapper"
+      },
+      "tool.test.runner": {
+        "mode": "wrapper",
+        "handler": "npm_test_wrapper"
+      }
+    },
+    "fallback_mode": "single_agent_human_in_the_loop"
+  },
+  "phase_routes": {
+    "session_start": {
+      "route": "wrapper",
+      "command_ids": [
+        "cmd.norm.registry-guard"
+      ]
+    },
+    "task_start": {
+      "route": "wrapper",
+      "command_ids": [
+        "cmd.norm.lifecycle-guard"
+      ]
+    },
+    "task_finish": {
+      "route": "wrapper",
+      "command_ids": [
+        "cmd.norm.verify"
+      ]
+    }
+  },
+  "fallback_mode": "single_agent_human_in_the_loop"
+}

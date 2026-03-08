@@ -1,0 +1,229 @@
+{
+  "schema_version": "dev_norm_kit.v1",
+  "workflow_chain": [
+    "docs_structure",
+    "baseline_standard",
+    "guard_execution"
+  ],
+  "gate_model": {
+    "concerns": [
+      "docs_structure",
+      "baseline_contract",
+      "protocol",
+      "runtime_safety",
+      "security_compliance",
+      "release_provenance"
+    ],
+    "scopes": [
+      "unit",
+      "component",
+      "system",
+      "release"
+    ],
+    "profile_aliases": {
+      "common": [
+        "unit",
+        "system"
+      ],
+      "project": [
+        "system"
+      ],
+      "service": [
+        "component"
+      ],
+      "package": [
+        "component"
+      ]
+    }
+  },
+  "task_lifecycle": {
+    "states": [
+      "conversation",
+      "ready",
+      "running",
+      "done",
+      "blocked"
+    ],
+    "default_state": "conversation",
+    "start_policy": "explicit",
+    "readiness_required_fields": [
+      "objective",
+      "done_when",
+      "constraints",
+      "output_format"
+    ],
+    "fallback_mode": "single_agent_human_in_the_loop"
+  },
+  "hook_policy": {
+    "session_start": [
+      "npm run norm:registry:guard"
+    ],
+    "task_start": [
+      "npm run norm:lifecycle:guard"
+    ],
+    "task_finish": [
+      "npm run norm:verify"
+    ],
+    "allow_provider_native_hooks": true,
+    "provider_native_hooks_authority": "advisory_only"
+  },
+  "acp_runtime_pack": {
+    "active_provider": "agnostic",
+    "install_scope": "project",
+    "supported_providers": [
+      "claude_code",
+      "codex_cli",
+      "gemini_cli",
+      "opencode_cli"
+    ],
+    "required_hook_phases": [
+      "session_start",
+      "task_start",
+      "task_finish"
+    ],
+    "required_command_ids": [
+      "cmd.norm.registry-guard",
+      "cmd.norm.lifecycle-guard",
+      "cmd.norm.verify"
+    ],
+    "required_mcp_tool_ids": [
+      "tool.search.web",
+      "tool.docs.context",
+      "tool.code.semantic",
+      "tool.repo.knowledge",
+      "tool.browser.playwright"
+    ],
+    "required_unit_tool_ids": [
+      "tool.search.repo",
+      "tool.test.runner"
+    ],
+    "required_skill_ids": [
+      "skill.session.prepare",
+      "skill.task.clarify-or-start",
+      "skill.task.finish-and-report"
+    ],
+    "require_provider_context_management": true,
+    "fallback_mode": "single_agent_human_in_the_loop",
+    "route_mode": "native_or_wrapper"
+  },
+  "development_slots": [
+    {
+      "slot_id": "slot.naming-and-language",
+      "purpose": "Enforce naming rules and provider/product neutral control-flow semantics.",
+      "required": true,
+      "owner": "engineering-governance",
+      "evidence_command": "npm run norm:naming:guard"
+    },
+    {
+      "slot_id": "slot.contract-and-model",
+      "purpose": "Require contract-first and model-typed changes before behavior implementation.",
+      "required": true,
+      "owner": "engineering-governance",
+      "evidence_command": "npm run norm:model:guard && npm run norm:frontend:guard"
+    },
+    {
+      "slot_id": "slot.state-and-lifecycle",
+      "purpose": "Require structured lifecycle transitions and forbid free-text authority mutation.",
+      "required": true,
+      "owner": "engineering-governance",
+      "evidence_command": "npm run norm:lifecycle:guard"
+    },
+    {
+      "slot_id": "slot.modularity-and-length",
+      "purpose": "Enforce module/file length guard and prevent oversized monolithic files.",
+      "required": true,
+      "owner": "engineering-governance",
+      "evidence_command": "npm run norm:length:guard"
+    },
+    {
+      "slot_id": "slot.guard-and-test-coupling",
+      "purpose": "Require guard and tests to be updated together with semantic changes.",
+      "required": true,
+      "owner": "engineering-governance",
+      "evidence_command": "npm run norm:dev:guard"
+    },
+    {
+      "slot_id": "slot.change-evidence-and-dod",
+      "purpose": "Require reproducible evidence output and DoD completion checks.",
+      "required": true,
+      "owner": "engineering-governance",
+      "evidence_command": "npm run norm:dev:guard"
+    }
+  ],
+  "backend_model_terms": [
+    {
+      "model_id": "contract_model",
+      "name": "Contract Model",
+      "default_scope_note": "schema/version/required fields"
+    },
+    {
+      "model_id": "domain_model",
+      "name": "Domain Model",
+      "default_scope_note": "session/task/lifecycle state machine"
+    },
+    {
+      "model_id": "transport_model",
+      "name": "Transport Model",
+      "default_scope_note": "API and event payload structure"
+    },
+    {
+      "model_id": "storage_model",
+      "name": "Storage Model",
+      "default_scope_note": "persistence rows and audit event records"
+    },
+    {
+      "model_id": "view_model",
+      "name": "View Model",
+      "default_scope_note": "TUI/CLI read-only projections (non-authoritative)"
+    }
+  ],
+  "frontend_model_terms": [
+    {
+      "model_id": "ui_contract_model",
+      "name": "UI Contract Model",
+      "default_scope_note": "design tokens, component props/events, and accessibility contracts"
+    },
+    {
+      "model_id": "interaction_domain_model",
+      "name": "Interaction Domain Model",
+      "default_scope_note": "page/flow interaction state and transition model"
+    },
+    {
+      "model_id": "frontend_transport_model",
+      "name": "Frontend Transport Model",
+      "default_scope_note": "request/response/event payloads consumed by frontend"
+    },
+    {
+      "model_id": "client_storage_model",
+      "name": "Client Storage Model",
+      "default_scope_note": "browser-side persistence contracts for cache/session/local storage"
+    },
+    {
+      "model_id": "view_composition_model",
+      "name": "View Composition Model",
+      "default_scope_note": "component tree composition and derived view state (non-authoritative)"
+    }
+  ],
+  "implementation_primitives": [
+    {
+      "primitive_id": "type_definition",
+      "name": "Type Definition"
+    },
+    {
+      "primitive_id": "constant_definition",
+      "name": "Constant Definition"
+    },
+    {
+      "primitive_id": "model_definition",
+      "name": "Model Definition"
+    },
+    {
+      "primitive_id": "function_definition",
+      "name": "Function Definition"
+    },
+    {
+      "primitive_id": "guard_mapping",
+      "name": "Guard Mapping"
+    }
+  ]
+}

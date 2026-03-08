@@ -1,0 +1,40 @@
+{
+  "schema_version": "acp_runtime_pack_contract.v1",
+  "role_semantics": [
+    "lead",
+    "worker"
+  ],
+  "canonical_skill_ids": [
+    "skill.session.prepare",
+    "skill.task.clarify-or-start",
+    "skill.task.finish-and-report"
+  ],
+  "canonical_command_ids": [
+    "cmd.workflow.conversation",
+    "cmd.workflow.ready",
+    "cmd.workflow.run",
+    "cmd.workflow.verify",
+    "cmd.workflow.mcp",
+    "cmd.norm.registry-guard",
+    "cmd.norm.lifecycle-guard",
+    "cmd.norm.verify"
+  ],
+  "canonical_hook_phases": [
+    "session_start",
+    "task_start",
+    "task_finish"
+  ],
+  "canonical_mcp_tool_ids": [
+    "tool.search.web",
+    "tool.docs.context",
+    "tool.code.semantic",
+    "tool.repo.knowledge",
+    "tool.browser.playwright"
+  ],
+  "canonical_unit_tool_ids": [
+    "tool.search.repo",
+    "tool.test.runner"
+  ],
+  "required_fallback_mode": "single_agent_human_in_the_loop",
+  "provider_agnostic_authority": true
+}

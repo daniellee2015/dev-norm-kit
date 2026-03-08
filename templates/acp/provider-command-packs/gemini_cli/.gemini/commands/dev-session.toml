@@ -1,0 +1,4 @@
+description = "Run session-start checks."
+prompt = """
+!{npm run norm:dev:session}
+"""

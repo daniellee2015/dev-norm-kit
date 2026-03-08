@@ -1,0 +1,163 @@
+{
+  "schema_version": "doc_index.v1",
+  "documents": [
+    {
+      "doc_id": "standard.dev-norm-kit-work-norm",
+      "path": "docs/standards/operations/DEV-NORM-KIT-WORK-NORM.md",
+      "owner_layer": "L5",
+      "plane": "governance",
+      "authority": "adapter",
+      "status": "frozen",
+      "doc_class": "canonical",
+      "guard_ids": [
+        "guard.docs.structure",
+        "guard.dnk.isolation",
+        "guard.registry.integrity",
+        "guard.norm.pointer-only",
+        "guard.acp.pack.compat"
+      ],
+      "last_reviewed_at": "2026-03-07",
+      "baseline_ids": [
+        "baseline.operations.dev-norm-kit-profile"
+      ]
+    },
+    {
+      "doc_id": "standard.task-lifecycle-hook-policy",
+      "path": "docs/standards/operations/TASK-LIFECYCLE-AND-HOOK-POLICY.md",
+      "owner_layer": "L5",
+      "plane": "operations",
+      "authority": "adapter",
+      "status": "frozen",
+      "doc_class": "canonical",
+      "guard_ids": [
+        "guard.lifecycle.hooks",
+        "guard.registry.integrity"
+      ],
+      "last_reviewed_at": "2026-03-07",
+      "baseline_ids": [
+        "baseline.operations.task-lifecycle-hook-policy"
+      ]
+    },
+    {
+      "doc_id": "standard.acp-runtime-compat-pack",
+      "path": "docs/standards/operations/ACP-RUNTIME-COMPAT-PACK.md",
+      "owner_layer": "L5",
+      "plane": "protocol",
+      "authority": "adapter",
+      "status": "frozen",
+      "doc_class": "canonical",
+      "guard_ids": [
+        "guard.acp.pack.compat",
+        "guard.registry.integrity"
+      ],
+      "last_reviewed_at": "2026-03-07",
+      "baseline_ids": [
+        "baseline.operations.acp-runtime-pack"
+      ]
+    },
+    {
+      "doc_id": "standard.minimal-mcp-toolkit-compat",
+      "path": "docs/standards/operations/MINIMAL-MCP-TOOLKIT-COMPAT.md",
+      "owner_layer": "L5",
+      "plane": "protocol",
+      "authority": "adapter",
+      "status": "frozen",
+      "doc_class": "canonical",
+      "guard_ids": [
+        "guard.mcp.toolkit.compat",
+        "guard.registry.integrity"
+      ],
+      "last_reviewed_at": "2026-03-07",
+      "baseline_ids": [
+        "baseline.operations.mcp-toolkit-compat"
+      ]
+    },
+    {
+      "doc_id": "standard.docs-structure-guard",
+      "path": "docs/standards/governance/DOCUMENTATION-STRUCTURE-AND-LIFECYCLE-GUARD.md",
+      "owner_layer": "L5",
+      "plane": "governance",
+      "authority": "view",
+      "status": "frozen",
+      "doc_class": "canonical",
+      "guard_ids": [
+        "guard.docs.structure",
+        "guard.registry.integrity"
+      ],
+      "last_reviewed_at": "2026-03-07",
+      "baseline_ids": [
+        "baseline.docs.classification"
+      ]
+    },
+    {
+      "doc_id": "standard.development-practice-slots",
+      "path": "docs/standards/governance/DEVELOPMENT-PRACTICE-SLOT-BASELINE.md",
+      "owner_layer": "L5",
+      "plane": "governance",
+      "authority": "adapter",
+      "status": "frozen",
+      "doc_class": "canonical",
+      "guard_ids": [
+        "guard.development.practice-slots",
+        "guard.naming.convention",
+        "guard.length.modularity",
+        "guard.registry.integrity"
+      ],
+      "last_reviewed_at": "2026-03-07",
+      "baseline_ids": [
+        "baseline.governance.development-practice-slots"
+      ]
+    },
+    {
+      "doc_id": "standard.backend-model-baseline",
+      "path": "docs/standards/model/BACKEND-MODEL-BASELINE.md",
+      "owner_layer": "L0",
+      "plane": "model",
+      "authority": "contracts",
+      "status": "frozen",
+      "doc_class": "canonical",
+      "guard_ids": [
+        "guard.model.baseline",
+        "guard.registry.integrity"
+      ],
+      "last_reviewed_at": "2026-03-07",
+      "baseline_ids": [
+        "baseline.model.backend-five-model-terms"
+      ]
+    },
+    {
+      "doc_id": "standard.layered-baseline-invariant-core",
+      "path": "docs/standards/process/LAYERED-BASELINE-AND-INVARIANT-CORE.md",
+      "owner_layer": "L5",
+      "plane": "process",
+      "authority": "adapter",
+      "status": "frozen",
+      "doc_class": "canonical",
+      "guard_ids": [
+        "guard.invariant.core",
+        "guard.registry.integrity"
+      ],
+      "last_reviewed_at": "2026-03-07",
+      "baseline_ids": [
+        "baseline.process.layered-invariant-core"
+      ]
+    },
+    {
+      "doc_id": "standard.frontend-model-baseline",
+      "path": "docs/standards/model/FRONTEND-MODEL-BASELINE.md",
+      "owner_layer": "L0",
+      "plane": "model",
+      "authority": "contracts",
+      "status": "frozen",
+      "doc_class": "canonical",
+      "guard_ids": [
+        "guard.frontend.model.baseline",
+        "guard.registry.integrity"
+      ],
+      "last_reviewed_at": "2026-03-07",
+      "baseline_ids": [
+        "baseline.model.frontend-five-model-terms"
+      ]
+    }
+  ]
+}

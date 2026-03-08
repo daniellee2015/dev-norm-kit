@@ -1,0 +1,31 @@
+{
+  "schema_version": "acp_hook_pack.v1",
+  "hooks": [
+    {
+      "hook_id": "hook.session.start",
+      "phase": "session_start",
+      "command_ids": [
+        "cmd.norm.registry-guard"
+      ],
+      "required": true
+    },
+    {
+      "hook_id": "hook.task.start",
+      "phase": "task_start",
+      "command_ids": [
+        "cmd.norm.lifecycle-guard"
+      ],
+      "required": true
+    },
+    {
+      "hook_id": "hook.task.finish",
+      "phase": "task_finish",
+      "command_ids": [
+        "cmd.norm.verify"
+      ],
+      "required": true
+    }
+  ],
+  "provider_native_hooks_authority": "advisory_only",
+  "route_mode": "native_or_wrapper"
+}

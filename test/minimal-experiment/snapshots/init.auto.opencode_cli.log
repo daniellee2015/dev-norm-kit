@@ -1,0 +1,83 @@
+install_scope=project
+provider_hook_support=plugin_hooks
+created files:
+- /private/tmp/dev-norm-kit-minimal-9ItiIT/AGENTS.md
+- /private/tmp/dev-norm-kit-minimal-9ItiIT/CLAUDE.md
+- /private/tmp/dev-norm-kit-minimal-9ItiIT/.dev-norm-kit/NORM.md
+- /private/tmp/dev-norm-kit-minimal-9ItiIT/.dev-norm-kit/config.json
+- /private/tmp/dev-norm-kit-minimal-9ItiIT/.dev-norm-kit/framework-selection.json
+- /private/tmp/dev-norm-kit-minimal-9ItiIT/.dev-norm-kit/acp/contract.json
+- /private/tmp/dev-norm-kit-minimal-9ItiIT/.dev-norm-kit/acp/skills.json
+- /private/tmp/dev-norm-kit-minimal-9ItiIT/.dev-norm-kit/acp/commands.json
+- /private/tmp/dev-norm-kit-minimal-9ItiIT/.dev-norm-kit/acp/hooks.json
+- /private/tmp/dev-norm-kit-minimal-9ItiIT/.dev-norm-kit/acp/mcp-tools.json
+- /private/tmp/dev-norm-kit-minimal-9ItiIT/.dev-norm-kit/acp/command-catalog.json
+- /private/tmp/dev-norm-kit-minimal-9ItiIT/.dev-norm-kit/acp/providers/claude_code.json
+- /private/tmp/dev-norm-kit-minimal-9ItiIT/.dev-norm-kit/acp/providers/codex_cli.json
+- /private/tmp/dev-norm-kit-minimal-9ItiIT/.dev-norm-kit/acp/providers/gemini_cli.json
+- /private/tmp/dev-norm-kit-minimal-9ItiIT/.dev-norm-kit/acp/providers/opencode_cli.json
+- /private/tmp/dev-norm-kit-minimal-9ItiIT/.dev-norm-kit/acp/provider-configs/claude_code.mcp.json
+- /private/tmp/dev-norm-kit-minimal-9ItiIT/.dev-norm-kit/acp/provider-configs/codex_cli.config.toml
+- /private/tmp/dev-norm-kit-minimal-9ItiIT/.dev-norm-kit/acp/provider-configs/gemini_cli.settings.json
+- /private/tmp/dev-norm-kit-minimal-9ItiIT/.dev-norm-kit/acp/provider-configs/opencode_cli.jsonc
+- /private/tmp/dev-norm-kit-minimal-9ItiIT/docs/README.md
+- /private/tmp/dev-norm-kit-minimal-9ItiIT/docs/registry/doc-index.yaml
+- /private/tmp/dev-norm-kit-minimal-9ItiIT/docs/registry/baseline-registry.yaml
+- /private/tmp/dev-norm-kit-minimal-9ItiIT/docs/registry/guard-registry.yaml
+- /private/tmp/dev-norm-kit-minimal-9ItiIT/docs/registry/invariant-core.yaml
+- /private/tmp/dev-norm-kit-minimal-9ItiIT/docs/standards/operations/DEV-NORM-KIT-WORK-NORM.md
+- /private/tmp/dev-norm-kit-minimal-9ItiIT/docs/standards/operations/ACP-RUNTIME-COMPAT-PACK.md
+- /private/tmp/dev-norm-kit-minimal-9ItiIT/docs/standards/operations/MINIMAL-MCP-TOOLKIT-COMPAT.md
+- /private/tmp/dev-norm-kit-minimal-9ItiIT/docs/standards/operations/TASK-LIFECYCLE-AND-HOOK-POLICY.md
+- /private/tmp/dev-norm-kit-minimal-9ItiIT/docs/standards/process/LAYERED-BASELINE-AND-INVARIANT-CORE.md
+- /private/tmp/dev-norm-kit-minimal-9ItiIT/docs/standards/governance/DOCUMENTATION-STRUCTURE-AND-LIFECYCLE-GUARD.md
+- /private/tmp/dev-norm-kit-minimal-9ItiIT/docs/standards/governance/DEVELOPMENT-PRACTICE-SLOT-BASELINE.md
+- /private/tmp/dev-norm-kit-minimal-9ItiIT/docs/standards/model/BACKEND-MODEL-BASELINE.md
+- /private/tmp/dev-norm-kit-minimal-9ItiIT/docs/standards/model/FRONTEND-MODEL-BASELINE.md
+- /private/tmp/dev-norm-kit-minimal-9ItiIT/scripts/guards/check_docs_structure.mjs
+- /private/tmp/dev-norm-kit-minimal-9ItiIT/scripts/guards/check_registry_integrity.mjs
+- /private/tmp/dev-norm-kit-minimal-9ItiIT/scripts/guards/check_norm_pointer_only.mjs
+- /private/tmp/dev-norm-kit-minimal-9ItiIT/scripts/guards/check_invariant_core.mjs
+- /private/tmp/dev-norm-kit-minimal-9ItiIT/scripts/guards/check_development_slots.mjs
+- /private/tmp/dev-norm-kit-minimal-9ItiIT/scripts/guards/check_task_lifecycle_hooks.mjs
+- /private/tmp/dev-norm-kit-minimal-9ItiIT/scripts/guards/check_acp_pack_compat.mjs
+- /private/tmp/dev-norm-kit-minimal-9ItiIT/scripts/guards/check_mcp_toolkit_compat.mjs
+- /private/tmp/dev-norm-kit-minimal-9ItiIT/scripts/guards/check_backend_model_baseline.mjs
+- /private/tmp/dev-norm-kit-minimal-9ItiIT/scripts/guards/check_frontend_model_baseline.mjs
+- /private/tmp/dev-norm-kit-minimal-9ItiIT/scripts/guards/check_naming_convention.mjs
+- /private/tmp/dev-norm-kit-minimal-9ItiIT/scripts/guards/check_length_guard.mjs
+- /private/tmp/dev-norm-kit-minimal-9ItiIT/scripts/acp/run_phase.mjs
+- /private/tmp/dev-norm-kit-minimal-9ItiIT/scripts/acp/list_mcp_tools.mjs
+- /private/tmp/dev-norm-kit-minimal-9ItiIT/scripts/acp/install_mcp_tools.mjs
+- /private/tmp/dev-norm-kit-minimal-9ItiIT/scripts/acp/run_workflow_stage.mjs
+- /private/tmp/dev-norm-kit-minimal-9ItiIT/scripts/acp/show_workflow_commands.mjs
+updated package.json scripts:
+- norm:docs:guard
+- norm:registry:guard
+- norm:norm-doc:guard
+- norm:invariant:guard
+- norm:model:guard
+- norm:frontend:guard
+- norm:naming:guard
+- norm:length:guard
+- norm:dev:guard
+- norm:lifecycle:guard
+- norm:acp:guard
+- norm:mcp:guard
+- norm:mcp:list
+- norm:mcp:install
+- norm:acp:workflow
+- norm:acp:conversation
+- norm:acp:ready
+- norm:acp:session
+- norm:acp:start
+- norm:acp:finish
+- norm:acp:full-cycle
+- norm:acp:session-start
+- norm:acp:task-start
+- norm:acp:task-finish
+- norm:verify
+active provider profile: opencode_cli (source=auto-detect)
+provider native MCP config written: /private/tmp/dev-norm-kit-minimal-9ItiIT/opencode.jsonc
+provider command pack written: created=7 skipped=0
+provider native hooks written: /private/tmp/dev-norm-kit-minimal-9ItiIT/.opencode/plugins/acp-runtime-hooks.ts

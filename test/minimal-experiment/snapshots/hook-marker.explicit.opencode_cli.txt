@@ -1,0 +1,17 @@
+export const AcpRuntimeHooks = async ({ $, directory }) => {
+  const runNormScript = async (scriptName) => {
+    await $`sh -lc "cd ${directory} && if [ -f .dev-norm-kit/config.json ] && [ -f package.json ]; then npm run -s ${scriptName}; fi"`;
+  };
+
+  return {
+    "session.created": async () => {
+      await runNormScript("norm:acp:session-start");
+    },
+    "tui.command.execute": async () => {
+      await runNormScript("norm:acp:task-start");
+    },
+    "session.idle": async () => {
+      await runNormScript("norm:acp:task-finish");
+    },
+  };
+};

@@ -1,0 +1,19 @@
+{
+  "schema_version": "package_boundary_profile.v1",
+  "package_name": "@waoooolab/dev-norm-kit",
+  "layer": "l5_operator_surface",
+  "owner_model": "project_profile_bootstrap",
+  "release_cadence": "on_change",
+  "policy_boundary": "shared",
+  "default_decision": "integrate",
+  "decision_gate": {
+    "integrate_when": [
+      "feature updates reusable ACP CLI bootstrap templates",
+      "feature only affects initialization profile and not runtime authority"
+    ],
+    "isolate_when": [
+      "feature introduces scheduler semantics",
+      "feature requires provider-specific control-flow logic"
+    ]
+  }
+}

@@ -1,0 +1,9 @@
+project_claude_settings=present
+project_claude_mcp=present
+local_claude_settings=present
+user_claude_settings=present
+user_codex_config=present
+user_gemini_config=present
+user_opencode_config=present
+user_opencode_hook_plugin=present
+user_opencode_command=present

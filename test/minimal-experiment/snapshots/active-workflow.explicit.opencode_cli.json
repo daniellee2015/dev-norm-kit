@@ -1,0 +1,60 @@
+{
+  "schema_version": "acp_active_workflow.v1",
+  "provider_id": "opencode_cli",
+  "source": "flag",
+  "fallback_mode": "single_agent_human_in_the_loop",
+  "role_semantics": [
+    "lead",
+    "worker"
+  ],
+  "context_management": {
+    "instruction_sources": [
+      "AGENTS.md",
+      "local agent definitions",
+      "provider settings"
+    ],
+    "delegation_strategy": "agent_or_subagent_dispatch",
+    "context_isolation_strategy": "subtask_context_isolated_from_primary"
+  },
+  "phase_plan": [
+    {
+      "phase": "session_start",
+      "route": "native_or_wrapper",
+      "command_ids": [
+        "cmd.norm.registry-guard"
+      ],
+      "commands": [
+        "npm run norm:registry:guard"
+      ],
+      "skill_ids": [
+        "skill.session.prepare"
+      ]
+    },
+    {
+      "phase": "task_start",
+      "route": "native_or_wrapper",
+      "command_ids": [
+        "cmd.norm.lifecycle-guard"
+      ],
+      "commands": [
+        "npm run norm:lifecycle:guard"
+      ],
+      "skill_ids": [
+        "skill.task.clarify-or-start"
+      ]
+    },
+    {
+      "phase": "task_finish",
+      "route": "native_or_wrapper",
+      "command_ids": [
+        "cmd.norm.verify"
+      ],
+      "commands": [
+        "npm run norm:verify"
+      ],
+      "skill_ids": [
+        "skill.task.finish-and-report"
+      ]
+    }
+  ]
+}

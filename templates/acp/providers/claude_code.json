@@ -1,0 +1,80 @@
+{
+  "schema_version": "acp_provider_profile.v1",
+  "provider_id": "claude_code",
+  "capability_flags": {
+    "lifecycle_hooks": "native",
+    "delegation_subagent": true,
+    "delegation_multi_agent": false,
+    "skills_registry": true,
+    "custom_commands": true,
+    "structured_noninteractive": true
+  },
+  "context_management": {
+    "instruction_sources": [
+      ".claude/agents/",
+      "CLAUDE.md"
+    ],
+    "delegation_strategy": "subagent_auto_delegate",
+    "context_isolation_strategy": "subagent_context_boundary"
+  },
+  "mcp_compat": {
+    "transport_mode": "native_or_wrapper",
+    "tool_routes": {
+      "tool.search.web": {
+        "mode": "native_or_wrapper",
+        "handler": "mcp_open_websearch_or_cli_wrapper"
+      },
+      "tool.docs.context": {
+        "mode": "native_or_wrapper",
+        "handler": "mcp_context7_or_cli_wrapper"
+      },
+      "tool.code.semantic": {
+        "mode": "native_or_wrapper",
+        "handler": "mcp_serena_or_cli_wrapper"
+      },
+      "tool.repo.knowledge": {
+        "mode": "native_or_wrapper",
+        "handler": "mcp_deepwiki_or_cli_wrapper"
+      },
+      "tool.browser.playwright": {
+        "mode": "native_or_wrapper",
+        "handler": "mcp_playwright_or_npx_wrapper"
+      }
+    },
+    "fallback_mode": "single_agent_human_in_the_loop"
+  },
+  "unit_tool_compat": {
+    "tool_routes": {
+      "tool.search.repo": {
+        "mode": "wrapper",
+        "handler": "rg_wrapper"
+      },
+      "tool.test.runner": {
+        "mode": "wrapper",
+        "handler": "npm_test_wrapper"
+      }
+    },
+    "fallback_mode": "single_agent_human_in_the_loop"
+  },
+  "phase_routes": {
+    "session_start": {
+      "route": "native_hook_or_wrapper",
+      "command_ids": [
+        "cmd.norm.registry-guard"
+      ]
+    },
+    "task_start": {
+      "route": "native_hook_or_wrapper",
+      "command_ids": [
+        "cmd.norm.lifecycle-guard"
+      ]
+    },
+    "task_finish": {
+      "route": "native_hook_or_wrapper",
+      "command_ids": [
+        "cmd.norm.verify"
+      ]
+    }
+  },
+  "fallback_mode": "single_agent_human_in_the_loop"
+}

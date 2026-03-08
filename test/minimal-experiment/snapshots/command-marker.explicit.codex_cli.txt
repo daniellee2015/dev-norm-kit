@@ -1,0 +1,10 @@
+---
+name: dev-clarify
+summary: Clarify scope in conversation mode before execution.
+---
+Do not run shell commands in this stage.
+Collect and confirm:
+1. objective
+2. done_when
+3. constraints
+4. output_format

@@ -1,0 +1,64 @@
+{
+  "schema_version": "invariant_core.v1",
+  "layers": [
+    {
+      "layer_id": "global_canonical",
+      "immutable": true,
+      "description": "Cross-project canonical baseline"
+    },
+    {
+      "layer_id": "project_foundation",
+      "immutable": true,
+      "description": "Project architecture and authority baseline"
+    },
+    {
+      "layer_id": "profile_overlay",
+      "immutable": false,
+      "description": "Project/team/user slot overlay baseline"
+    }
+  ],
+  "global_canonical": {
+    "required_categories": [
+      "protocol_interop",
+      "contract_interface",
+      "engineering_supply_chain",
+      "governance_risk",
+      "observability"
+    ],
+    "framework_selection_path": ".dev-norm-kit/framework-selection.json",
+    "category_reference_examples": {
+      "protocol_interop": ["mcp", "acp", "a2a"],
+      "contract_interface": ["openapi", "asyncapi", "json_schema_2020_12", "cloudevents"],
+      "engineering_supply_chain": ["nist_ssdf", "slsa"],
+      "governance_risk": ["nist_ai_rmf", "owasp_asvs"],
+      "observability": ["opentelemetry"]
+    }
+  },
+  "project_foundation": {
+    "planes": ["capability", "protocol", "evolution", "engineering", "governance"],
+    "backend_models": [
+      "contract_model",
+      "domain_model",
+      "transport_model",
+      "storage_model",
+      "view_model"
+    ],
+    "implementation_primitives": [
+      "type_definition",
+      "constant_definition",
+      "model_definition",
+      "function_definition",
+      "guard_mapping"
+    ],
+    "authority_rules": [
+      "runtime_owns_semantics",
+      "view_non_authoritative",
+      "structured_transport_for_state_changes"
+    ]
+  },
+  "profile_overlay_rules": {
+    "can_extend": true,
+    "can_relax_upper_layers": false,
+    "must_use_slots": true
+  }
+}

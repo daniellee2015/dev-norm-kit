@@ -1,0 +1,229 @@
+{
+  "schema_version": "guard_registry.v1",
+  "guards": [
+    {
+      "guard_id": "guard.docs.structure",
+      "level": "common",
+      "owner": "docs-governance",
+      "entry": "npm run norm:docs:guard",
+      "inputs": [
+        "docs/**"
+      ],
+      "baseline_ids": [
+        "baseline.docs.classification",
+        "baseline.operations.dev-norm-kit-profile"
+      ],
+      "ci_required": true,
+      "fail_policy": "block"
+    },
+    {
+      "guard_id": "guard.dnk.isolation",
+      "level": "project",
+      "owner": "engineering-governance",
+      "entry": "npm run norm:isolation:guard",
+      "inputs": [
+        ".dev-norm-kit/**",
+        "docs/registry/**",
+        "docs/standards/operations/**",
+        "scripts/acp/**",
+        "scripts/guards/check_dnk_isolation.mjs"
+      ],
+      "baseline_ids": [
+        "baseline.operations.dev-norm-kit-profile"
+      ],
+      "ci_required": true,
+      "fail_policy": "block"
+    },
+    {
+      "guard_id": "guard.registry.integrity",
+      "level": "project",
+      "owner": "docs-governance",
+      "entry": "npm run norm:registry:guard",
+      "inputs": [
+        "docs/registry/**",
+        "scripts/guards/check_registry_integrity.mjs"
+      ],
+      "baseline_ids": [
+        "baseline.operations.dev-norm-kit-profile"
+      ],
+      "ci_required": true,
+      "fail_policy": "block"
+    },
+    {
+      "guard_id": "guard.norm.pointer-only",
+      "level": "project",
+      "owner": "docs-governance",
+      "entry": "npm run norm:norm-doc:guard",
+      "inputs": [
+        ".dev-norm-kit/NORM.md",
+        "docs/registry/doc-index.yaml",
+        "docs/registry/baseline-registry.yaml",
+        "docs/registry/guard-registry.yaml",
+        "scripts/guards/check_norm_pointer_only.mjs"
+      ],
+      "baseline_ids": [
+        "baseline.operations.dev-norm-kit-profile"
+      ],
+      "ci_required": true,
+      "fail_policy": "block"
+    },
+    {
+      "guard_id": "guard.development.practice-slots",
+      "level": "project",
+      "owner": "engineering-governance",
+      "entry": "npm run norm:dev:guard",
+      "inputs": [
+        ".dev-norm-kit/config.json",
+        "docs/standards/governance/DEVELOPMENT-PRACTICE-SLOT-BASELINE.md",
+        "scripts/guards/check_development_slots.mjs"
+      ],
+      "baseline_ids": [
+        "baseline.governance.development-practice-slots"
+      ],
+      "ci_required": true,
+      "fail_policy": "block"
+    },
+    {
+      "guard_id": "guard.lifecycle.hooks",
+      "level": "project",
+      "owner": "engineering-governance",
+      "entry": "npm run norm:lifecycle:guard",
+      "inputs": [
+        ".dev-norm-kit/config.json",
+        "docs/standards/operations/TASK-LIFECYCLE-AND-HOOK-POLICY.md",
+        "scripts/guards/check_task_lifecycle_hooks.mjs"
+      ],
+      "baseline_ids": [
+        "baseline.operations.task-lifecycle-hook-policy",
+        "baseline.operations.dev-norm-kit-profile"
+      ],
+      "ci_required": true,
+      "fail_policy": "block"
+    },
+    {
+      "guard_id": "guard.acp.pack.compat",
+      "level": "project",
+      "owner": "engineering-governance",
+      "entry": "npm run norm:acp:guard",
+      "inputs": [
+        ".dev-norm-kit/config.json",
+        ".dev-norm-kit/acp/contract.json",
+        ".dev-norm-kit/acp/skills.json",
+        ".dev-norm-kit/acp/commands.json",
+        ".dev-norm-kit/acp/hooks.json",
+        ".dev-norm-kit/acp/active-provider.json",
+        ".dev-norm-kit/acp/active-workflow.json",
+        ".dev-norm-kit/acp/providers/*.json",
+        "scripts/acp/run_phase.mjs",
+        "docs/standards/operations/ACP-RUNTIME-COMPAT-PACK.md",
+        "scripts/guards/check_acp_pack_compat.mjs"
+      ],
+      "baseline_ids": [
+        "baseline.operations.acp-runtime-pack"
+      ],
+      "ci_required": true,
+      "fail_policy": "block"
+    },
+    {
+      "guard_id": "guard.mcp.toolkit.compat",
+      "level": "project",
+      "owner": "engineering-governance",
+      "entry": "npm run norm:mcp:guard",
+      "inputs": [
+        ".dev-norm-kit/config.json",
+        ".dev-norm-kit/acp/contract.json",
+        ".dev-norm-kit/acp/mcp-tools.json",
+        ".dev-norm-kit/acp/active-provider.json",
+        ".dev-norm-kit/acp/active-workflow.json",
+        ".dev-norm-kit/acp/providers/*.json",
+        ".dev-norm-kit/acp/provider-configs/*.json*",
+        "docs/standards/operations/MINIMAL-MCP-TOOLKIT-COMPAT.md",
+        "scripts/acp/list_mcp_tools.mjs",
+        "scripts/acp/install_mcp_tools.mjs",
+        "scripts/guards/check_mcp_toolkit_compat.mjs"
+      ],
+      "baseline_ids": [
+        "baseline.operations.mcp-toolkit-compat",
+        "baseline.operations.dev-norm-kit-profile"
+      ],
+      "ci_required": true,
+      "fail_policy": "block"
+    },
+    {
+      "guard_id": "guard.model.baseline",
+      "level": "project",
+      "owner": "engineering-governance",
+      "entry": "npm run norm:model:guard",
+      "inputs": [
+        "docs/standards/model/BACKEND-MODEL-BASELINE.md",
+        ".dev-norm-kit/config.json",
+        "scripts/guards/check_backend_model_baseline.mjs"
+      ],
+      "baseline_ids": [
+        "baseline.model.backend-five-model-terms"
+      ],
+      "ci_required": true,
+      "fail_policy": "block"
+    },
+    {
+      "guard_id": "guard.naming.convention",
+      "level": "project",
+      "owner": "engineering-governance",
+      "entry": "npm run norm:naming:guard",
+      "inputs": [
+        "scripts/guards/check_naming_convention.mjs"
+      ],
+      "baseline_ids": [
+        "baseline.governance.development-practice-slots"
+      ],
+      "ci_required": true,
+      "fail_policy": "block"
+    },
+    {
+      "guard_id": "guard.length.modularity",
+      "level": "project",
+      "owner": "engineering-governance",
+      "entry": "npm run norm:length:guard",
+      "inputs": [
+        "scripts/guards/check_length_guard.mjs"
+      ],
+      "baseline_ids": [
+        "baseline.governance.development-practice-slots"
+      ],
+      "ci_required": true,
+      "fail_policy": "block"
+    },
+    {
+      "guard_id": "guard.invariant.core",
+      "level": "project",
+      "owner": "engineering-governance",
+      "entry": "npm run norm:invariant:guard",
+      "inputs": [
+        "docs/registry/invariant-core.yaml",
+        "docs/standards/process/LAYERED-BASELINE-AND-INVARIANT-CORE.md",
+        "scripts/guards/check_invariant_core.mjs"
+      ],
+      "baseline_ids": [
+        "baseline.process.layered-invariant-core"
+      ],
+      "ci_required": true,
+      "fail_policy": "block"
+    },
+    {
+      "guard_id": "guard.frontend.model.baseline",
+      "level": "project",
+      "owner": "engineering-governance",
+      "entry": "npm run norm:frontend:guard",
+      "inputs": [
+        "docs/standards/model/FRONTEND-MODEL-BASELINE.md",
+        ".dev-norm-kit/config.json",
+        "scripts/guards/check_frontend_model_baseline.mjs"
+      ],
+      "baseline_ids": [
+        "baseline.model.frontend-five-model-terms"
+      ],
+      "ci_required": true,
+      "fail_policy": "block"
+    }
+  ]
+}

@@ -1,0 +1,164 @@
+{
+  "schema_version": "baseline_registry.v1",
+  "baselines": [
+    {
+      "baseline_id": "baseline.docs.classification",
+      "scope": "project",
+      "source_doc": "docs/standards/governance/DOCUMENTATION-STRUCTURE-AND-LIFECYCLE-GUARD.md",
+      "owner_repo": "local-project",
+      "enforcement": "ci-required",
+      "guard_ids": [
+        "guard.docs.structure"
+      ],
+      "evidence": [
+        "npm run norm:docs:guard"
+      ],
+      "version": "v1",
+      "status": "frozen",
+      "deprecation_policy": "requires replacement standard"
+    },
+    {
+      "baseline_id": "baseline.operations.dev-norm-kit-profile",
+      "scope": "project",
+      "source_doc": "docs/standards/operations/DEV-NORM-KIT-WORK-NORM.md",
+      "owner_repo": "local-project",
+      "enforcement": "ci-required",
+      "guard_ids": [
+        "guard.docs.structure",
+        "guard.dnk.isolation",
+        "guard.registry.integrity",
+        "guard.norm.pointer-only",
+        "guard.lifecycle.hooks",
+        "guard.acp.pack.compat",
+        "guard.mcp.toolkit.compat"
+      ],
+      "evidence": [
+        "npm run norm:verify"
+      ],
+      "version": "v1",
+      "status": "frozen",
+      "deprecation_policy": "replace only with newer compatible profile"
+    },
+    {
+      "baseline_id": "baseline.operations.task-lifecycle-hook-policy",
+      "scope": "project",
+      "source_doc": "docs/standards/operations/TASK-LIFECYCLE-AND-HOOK-POLICY.md",
+      "owner_repo": "local-project",
+      "enforcement": "ci-required",
+      "guard_ids": [
+        "guard.lifecycle.hooks",
+        "guard.registry.integrity"
+      ],
+      "evidence": [
+        "npm run norm:lifecycle:guard"
+      ],
+      "version": "v1",
+      "status": "frozen",
+      "deprecation_policy": "replace only with compatible task lifecycle and hook policy migration"
+    },
+    {
+      "baseline_id": "baseline.operations.acp-runtime-pack",
+      "scope": "project",
+      "source_doc": "docs/standards/operations/ACP-RUNTIME-COMPAT-PACK.md",
+      "owner_repo": "local-project",
+      "enforcement": "ci-required",
+      "guard_ids": [
+        "guard.acp.pack.compat",
+        "guard.registry.integrity"
+      ],
+      "evidence": [
+        "npm run norm:acp:guard"
+      ],
+      "version": "v1",
+      "status": "frozen",
+      "deprecation_policy": "replace only with compatible ACP runtime pack migration"
+    },
+    {
+      "baseline_id": "baseline.operations.mcp-toolkit-compat",
+      "scope": "project",
+      "source_doc": "docs/standards/operations/MINIMAL-MCP-TOOLKIT-COMPAT.md",
+      "owner_repo": "local-project",
+      "enforcement": "ci-required",
+      "guard_ids": [
+        "guard.mcp.toolkit.compat",
+        "guard.registry.integrity"
+      ],
+      "evidence": [
+        "npm run norm:mcp:guard"
+      ],
+      "version": "v1",
+      "status": "frozen",
+      "deprecation_policy": "replace only with compatible MCP toolkit migration"
+    },
+    {
+      "baseline_id": "baseline.governance.development-practice-slots",
+      "scope": "project",
+      "source_doc": "docs/standards/governance/DEVELOPMENT-PRACTICE-SLOT-BASELINE.md",
+      "owner_repo": "local-project",
+      "enforcement": "ci-required",
+      "guard_ids": [
+        "guard.development.practice-slots",
+        "guard.naming.convention",
+        "guard.length.modularity",
+        "guard.registry.integrity"
+      ],
+      "evidence": [
+        "npm run norm:dev:guard"
+      ],
+      "version": "v1",
+      "status": "frozen",
+      "deprecation_policy": "replace only with compatible slot schema and migration note"
+    },
+    {
+      "baseline_id": "baseline.model.backend-five-model-terms",
+      "scope": "project",
+      "source_doc": "docs/standards/model/BACKEND-MODEL-BASELINE.md",
+      "owner_repo": "local-project",
+      "enforcement": "ci-required",
+      "guard_ids": [
+        "guard.model.baseline",
+        "guard.registry.integrity"
+      ],
+      "evidence": [
+        "npm run norm:model:guard"
+      ],
+      "version": "v1",
+      "status": "frozen",
+      "deprecation_policy": "replace only with compatible backend model baseline migration"
+    },
+    {
+      "baseline_id": "baseline.process.layered-invariant-core",
+      "scope": "project",
+      "source_doc": "docs/standards/process/LAYERED-BASELINE-AND-INVARIANT-CORE.md",
+      "owner_repo": "local-project",
+      "enforcement": "ci-required",
+      "guard_ids": [
+        "guard.invariant.core",
+        "guard.registry.integrity"
+      ],
+      "evidence": [
+        "npm run norm:invariant:guard"
+      ],
+      "version": "v1",
+      "status": "frozen",
+      "deprecation_policy": "replace only with compatible layered invariant migration"
+    },
+    {
+      "baseline_id": "baseline.model.frontend-five-model-terms",
+      "scope": "project",
+      "source_doc": "docs/standards/model/FRONTEND-MODEL-BASELINE.md",
+      "owner_repo": "local-project",
+      "enforcement": "ci-required",
+      "guard_ids": [
+        "guard.frontend.model.baseline",
+        "guard.registry.integrity"
+      ],
+      "evidence": [
+        "npm run norm:frontend:guard"
+      ],
+      "version": "v1",
+      "status": "frozen",
+      "deprecation_policy": "replace only with compatible frontend model baseline migration"
+    }
+  ]
+}

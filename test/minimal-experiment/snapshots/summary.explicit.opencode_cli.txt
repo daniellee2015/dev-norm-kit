@@ -1,0 +1,10 @@
+mode=explicit
+expected_provider=opencode_cli
+active_provider=opencode_cli
+source=flag
+phase_count=3
+mcp_tool_count=7
+native_config_path=opencode.jsonc
+command_marker_path=.opencode/commands/dev-clarify.md
+hook_marker_path=.opencode/plugins/acp-runtime-hooks.ts
+package_tgz=waoooolab-dev-norm-kit-0.1.0.tgz

@@ -1,0 +1,34 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "sh -lc 'if [ -f \".dev-norm-kit/config.json\" ] && [ -f \"package.json\" ]; then npm run -s norm:acp:session-start; fi'"
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "sh -lc 'if [ -f \".dev-norm-kit/config.json\" ] && [ -f \"package.json\" ]; then npm run -s norm:acp:task-start; fi'"
+          }
+        ]
+      }
+    ],
+    "TaskCompleted": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "sh -lc 'if [ -f \".dev-norm-kit/config.json\" ] && [ -f \"package.json\" ]; then npm run -s norm:acp:task-finish; fi'"
+          }
+        ]
+      }
+    ]
+  }
+}

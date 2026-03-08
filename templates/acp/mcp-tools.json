@@ -1,0 +1,92 @@
+{
+  "schema_version": "mcp_toolkit.v1",
+  "required_tool_ids": [
+    "tool.search.web",
+    "tool.docs.context",
+    "tool.code.semantic",
+    "tool.repo.knowledge",
+    "tool.browser.playwright"
+  ],
+  "tools": [
+    {
+      "tool_id": "tool.search.web",
+      "tool_type": "mcp",
+      "runtime_type": "process_npx",
+      "capability": "web_search",
+      "description": "General web search for latest external information.",
+      "default_execution": {
+        "mode": "native_or_wrapper",
+        "command": "npx -y websearch-mcp"
+      },
+      "default_provider_hint": "websearch-mcp",
+      "install_targets": {
+        "npm_package": "websearch-mcp",
+        "prefer_npx": true
+      }
+    },
+    {
+      "tool_id": "tool.docs.context",
+      "tool_type": "mcp",
+      "runtime_type": "process_npx",
+      "capability": "documentation_context",
+      "description": "Library/framework documentation retrieval for coding tasks.",
+      "default_execution": {
+        "mode": "native_or_wrapper",
+        "command": "npx -y @upstash/context7-mcp"
+      },
+      "default_provider_hint": "context7",
+      "install_targets": {
+        "npm_package": "@upstash/context7-mcp",
+        "prefer_npx": true
+      }
+    },
+    {
+      "tool_id": "tool.code.semantic",
+      "tool_type": "mcp",
+      "runtime_type": "process_uvx",
+      "capability": "semantic_code_ops",
+      "description": "Semantic code navigation and symbol-level operations.",
+      "default_execution": {
+        "mode": "native_or_wrapper",
+        "command": "uvx --from git+https://github.com/oraios/serena serena start-mcp-server --context ide-assistant"
+      },
+      "default_provider_hint": "serena",
+      "install_targets": {
+        "python_tool": "uvx",
+        "prefer_npx": false
+      }
+    },
+    {
+      "tool_id": "tool.repo.knowledge",
+      "tool_type": "mcp",
+      "runtime_type": "remote_endpoint",
+      "capability": "repository_knowledge",
+      "description": "Repository-level knowledge retrieval and architecture query support.",
+      "default_execution": {
+        "mode": "remote",
+        "command": "https://mcp.deepwiki.com/mcp"
+      },
+      "default_provider_hint": "deepwiki_remote",
+      "install_targets": {
+        "prefer_npx": false
+      }
+    },
+    {
+      "tool_id": "tool.browser.playwright",
+      "tool_type": "mcp",
+      "runtime_type": "process_npx",
+      "capability": "browser_testing",
+      "description": "Browser automation and e2e checks via Playwright.",
+      "default_execution": {
+        "mode": "native_or_wrapper",
+        "command": "npx -y @playwright/mcp@latest"
+      },
+      "default_provider_hint": "playwright_mcp",
+      "install_targets": {
+        "npm_package": "@playwright/mcp",
+        "prefer_npx": true
+      }
+    }
+  ],
+  "fallback_mode": "single_agent_human_in_the_loop"
+}

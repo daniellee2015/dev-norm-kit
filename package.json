@@ -1,0 +1,49 @@
+{
+  "name": "@waoooolab/dev-norm-kit",
+  "version": "0.1.0",
+  "private": false,
+  "type": "module",
+  "description": "Dev Norm Kit bootstrap profile for single ACP CLI mode",
+  "bin": {
+    "dnk": "bin/dnk.mjs",
+    "dev-norm": "bin/dev-norm.mjs",
+    "acp-cli-dev-norm": "bin/acp-cli-dev-norm.mjs"
+  },
+  "files": [
+    "bin",
+    "docs",
+    "scripts",
+    "templates",
+    "README.md",
+    "boundary-profile.json"
+  ],
+  "scripts": {
+    "norm:docs:guard": "node scripts/guards/check_docs_structure.mjs",
+    "norm:isolation:guard": "node scripts/guards/check_dnk_isolation.mjs",
+    "norm:registry:guard": "node scripts/guards/check_registry_integrity.mjs",
+    "norm:norm-doc:guard": "node scripts/guards/check_norm_pointer_only.mjs",
+    "norm:invariant:guard": "node scripts/guards/check_invariant_core.mjs",
+    "norm:model:guard": "node scripts/guards/check_backend_model_baseline.mjs",
+    "norm:frontend:guard": "node scripts/guards/check_frontend_model_baseline.mjs",
+    "norm:naming:guard": "node scripts/guards/check_naming_convention.mjs",
+    "norm:length:guard": "node scripts/guards/check_length_guard.mjs",
+    "norm:dev:guard": "node scripts/guards/check_development_slots.mjs",
+    "norm:lifecycle:guard": "node scripts/guards/check_task_lifecycle_hooks.mjs",
+    "norm:acp:guard": "node scripts/guards/check_acp_pack_compat.mjs",
+    "norm:mcp:guard": "node scripts/guards/check_mcp_toolkit_compat.mjs",
+    "norm:mcp:list": "node scripts/acp/list_mcp_tools.mjs",
+    "norm:mcp:install": "node scripts/acp/install_mcp_tools.mjs",
+    "norm:acp:workflow": "node scripts/acp/show_workflow_commands.mjs",
+    "norm:acp:conversation": "node scripts/acp/run_workflow_stage.mjs --stage conversation_prepare",
+    "norm:acp:ready": "node scripts/acp/run_workflow_stage.mjs --stage readiness_check",
+    "norm:acp:session": "node scripts/acp/run_workflow_stage.mjs --stage session_start",
+    "norm:acp:start": "node scripts/acp/run_workflow_stage.mjs --stage task_start",
+    "norm:acp:finish": "node scripts/acp/run_workflow_stage.mjs --stage task_finish",
+    "norm:acp:full-cycle": "node scripts/acp/run_workflow_stage.mjs --stage full_cycle",
+    "norm:acp:session-start": "node scripts/acp/run_phase.mjs --phase session_start",
+    "norm:acp:task-start": "node scripts/acp/run_phase.mjs --phase task_start",
+    "norm:acp:task-finish": "node scripts/acp/run_phase.mjs --phase task_finish",
+    "norm:verify": "npm run norm:docs:guard && npm run norm:isolation:guard && npm run norm:registry:guard && npm run norm:norm-doc:guard && npm run norm:invariant:guard && npm run norm:model:guard && npm run norm:frontend:guard && npm run norm:naming:guard && npm run norm:length:guard && npm run norm:dev:guard && npm run norm:lifecycle:guard && npm run norm:acp:guard && npm run norm:mcp:guard",
+    "test:minimal": "node test/minimal-e2e.mjs --project-dir ./test/output/minimal-project --reset --keep"
+  }
+}

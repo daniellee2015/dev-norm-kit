@@ -1,0 +1,11 @@
+
+> dev-norm-kit-minimal-9itiit@1.0.0 norm:acp:task-start
+> node scripts/acp/run_phase.mjs --phase task_start
+
+acp-phase-runner plan: {"phase":"task_start","provider_id":"opencode_cli","route":"native_or_wrapper","command_ids":["cmd.norm.lifecycle-guard"],"command_count":1,"dry_run":false}
+
+> dev-norm-kit-minimal-9itiit@1.0.0 norm:lifecycle:guard
+> node scripts/guards/check_task_lifecycle_hooks.mjs
+
+task-lifecycle-hooks summary: failures=0
+acp-phase-runner summary: failures=0

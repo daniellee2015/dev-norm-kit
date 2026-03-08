@@ -1,0 +1,10 @@
+mode=explicit
+expected_provider=gemini_cli
+active_provider=gemini_cli
+source=flag
+phase_count=3
+mcp_tool_count=7
+native_config_path=.gemini/settings.json
+command_marker_path=.gemini/commands/dev-clarify.toml
+hook_marker_path=none
+package_tgz=waoooolab-dev-norm-kit-0.1.0.tgz

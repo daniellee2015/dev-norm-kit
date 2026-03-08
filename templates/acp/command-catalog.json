@@ -1,0 +1,67 @@
+{
+  "schema_version": "acp_command_catalog.v1",
+  "commands": [
+    {
+      "command_id": "cmd.workflow.conversation",
+      "display_name": "dev:clarify",
+      "purpose": "Collect conversation boundary fields before task execution.",
+      "run": "npm run norm:acp:conversation",
+      "stage": "conversation_prepare",
+      "primary": true
+    },
+    {
+      "command_id": "cmd.workflow.ready",
+      "display_name": "dev:confirm",
+      "purpose": "Validate readiness fields and policy before execution.",
+      "run": "npm run norm:acp:ready",
+      "stage": "readiness_check",
+      "primary": true
+    },
+    {
+      "command_id": "cmd.workflow.session",
+      "display_name": "dev:session",
+      "purpose": "Execute session_start phase route.",
+      "run": "npm run norm:acp:session",
+      "stage": "session_start",
+      "primary": false
+    },
+    {
+      "command_id": "cmd.workflow.run",
+      "display_name": "dev:run",
+      "purpose": "Execute task_start phase route.",
+      "run": "npm run norm:acp:start",
+      "stage": "task_start",
+      "primary": true
+    },
+    {
+      "command_id": "cmd.workflow.verify",
+      "display_name": "dev:verify",
+      "purpose": "Execute task_finish phase route.",
+      "run": "npm run norm:acp:finish",
+      "stage": "task_finish",
+      "primary": true
+    },
+    {
+      "command_id": "cmd.workflow.full-cycle",
+      "display_name": "dev:full",
+      "purpose": "Run session->start->finish in one command.",
+      "run": "npm run norm:acp:full-cycle",
+      "stage": "full_cycle",
+      "primary": false
+    },
+    {
+      "command_id": "cmd.workflow.mcp",
+      "display_name": "dev:mcp",
+      "purpose": "Check MCP toolkit compatibility and list active tool routes.",
+      "run": "npm run norm:mcp:guard && npm run norm:mcp:list -- --json",
+      "stage": "tooling",
+      "primary": false
+    }
+  ],
+  "provider_invocation": {
+    "claude_code": "slash command files under .claude/commands/* -> /dev-clarify /dev-confirm /dev-run /dev-verify",
+    "gemini_cli": "slash command files under .gemini/commands/* -> /dev-clarify /dev-confirm /dev-run /dev-verify",
+    "opencode_cli": "slash command files under .opencode/commands/* -> /dev-clarify /dev-confirm /dev-run /dev-verify",
+    "codex_cli": "skills under .agents/skills/dev-* (project) or ~/.codex/skills/dev-* (user)"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "schema_version": "unit_toolkit.v1",
+  "required_tool_ids": [
+    "tool.search.repo",
+    "tool.test.runner"
+  ],
+  "tools": [
+    {
+      "tool_id": "tool.search.repo",
+      "tool_type": "unit",
+      "runtime_type": "wrapper_command",
+      "capability": "repository_search",
+      "description": "Repository search and file discovery via local command wrapper.",
+      "default_execution": {
+        "mode": "wrapper",
+        "command": "rg --files"
+      },
+      "default_provider_hint": "ripgrep"
+    },
+    {
+      "tool_id": "tool.test.runner",
+      "tool_type": "unit",
+      "runtime_type": "wrapper_command",
+      "capability": "project_test_runner",
+      "description": "Run project tests via package test command wrapper.",
+      "default_execution": {
+        "mode": "wrapper",
+        "command": "npm test"
+      },
+      "default_provider_hint": "package-test-runner"
+    }
+  ],
+  "fallback_mode": "single_agent_human_in_the_loop"
+}

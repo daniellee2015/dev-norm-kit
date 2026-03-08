@@ -1,0 +1,10 @@
+mode=explicit
+expected_provider=claude_code
+active_provider=claude_code
+source=flag
+phase_count=3
+mcp_tool_count=7
+native_config_path=.mcp.json
+command_marker_path=.claude/commands/dev-clarify.md
+hook_marker_path=.claude/settings.json
+package_tgz=waoooolab-dev-norm-kit-0.1.0.tgz

@@ -1,0 +1,11 @@
+
+> dev-norm-kit-minimal-cudqx5@1.0.0 norm:acp:session-start
+> node scripts/acp/run_phase.mjs --phase session_start
+
+acp-phase-runner plan: {"phase":"session_start","provider_id":"gemini_cli","route":"wrapper","command_ids":["cmd.norm.registry-guard"],"command_count":1,"dry_run":false}
+
+> dev-norm-kit-minimal-cudqx5@1.0.0 norm:registry:guard
+> node scripts/guards/check_registry_integrity.mjs
+
+registry-integrity summary: failures=0
+acp-phase-runner summary: failures=0

@@ -1,0 +1,58 @@
+install_scope=user
+provider_hook_support=wrapper_only
+created files:
+- /private<WORK_DIR>/AGENTS.md
+- /private<WORK_DIR>/CLAUDE.md
+- /private<WORK_DIR>/.dev-norm-kit/NORM.md
+- /private<WORK_DIR>/.dev-norm-kit/config.json
+- /private<WORK_DIR>/.dev-norm-kit/framework-selection.json
+- /private<WORK_DIR>/.dev-norm-kit/acp/contract.json
+- /private<WORK_DIR>/.dev-norm-kit/acp/skills.json
+- /private<WORK_DIR>/.dev-norm-kit/acp/commands.json
+- /private<WORK_DIR>/.dev-norm-kit/acp/hooks.json
+- /private<WORK_DIR>/.dev-norm-kit/acp/mcp-tools.json
+- /private<WORK_DIR>/.dev-norm-kit/acp/command-catalog.json
+- /private<WORK_DIR>/.dev-norm-kit/acp/providers/claude_code.json
+- /private<WORK_DIR>/.dev-norm-kit/acp/providers/codex_cli.json
+- /private<WORK_DIR>/.dev-norm-kit/acp/providers/gemini_cli.json
+- /private<WORK_DIR>/.dev-norm-kit/acp/providers/opencode_cli.json
+- /private<WORK_DIR>/.dev-norm-kit/acp/provider-configs/claude_code.mcp.json
+- /private<WORK_DIR>/.dev-norm-kit/acp/provider-configs/codex_cli.config.toml
+- /private<WORK_DIR>/.dev-norm-kit/acp/provider-configs/gemini_cli.settings.json
+- /private<WORK_DIR>/.dev-norm-kit/acp/provider-configs/opencode_cli.jsonc
+- /private<WORK_DIR>/docs/README.md
+- /private<WORK_DIR>/docs/registry/doc-index.yaml
+- /private<WORK_DIR>/docs/registry/baseline-registry.yaml
+- /private<WORK_DIR>/docs/registry/guard-registry.yaml
+- /private<WORK_DIR>/docs/registry/invariant-core.yaml
+- /private<WORK_DIR>/docs/standards/operations/DEV-NORM-KIT-WORK-NORM.md
+- /private<WORK_DIR>/docs/standards/operations/ACP-RUNTIME-COMPAT-PACK.md
+- /private<WORK_DIR>/docs/standards/operations/MINIMAL-MCP-TOOLKIT-COMPAT.md
+- /private<WORK_DIR>/docs/standards/operations/TASK-LIFECYCLE-AND-HOOK-POLICY.md
+- /private<WORK_DIR>/docs/standards/process/LAYERED-BASELINE-AND-INVARIANT-CORE.md
+- /private<WORK_DIR>/docs/standards/governance/DOCUMENTATION-STRUCTURE-AND-LIFECYCLE-GUARD.md
+- /private<WORK_DIR>/docs/standards/governance/DEVELOPMENT-PRACTICE-SLOT-BASELINE.md
+- /private<WORK_DIR>/docs/standards/model/BACKEND-MODEL-BASELINE.md
+- /private<WORK_DIR>/docs/standards/model/FRONTEND-MODEL-BASELINE.md
+- /private<WORK_DIR>/scripts/guards/check_docs_structure.mjs
+- /private<WORK_DIR>/scripts/guards/check_registry_integrity.mjs
+- /private<WORK_DIR>/scripts/guards/check_norm_pointer_only.mjs
+- /private<WORK_DIR>/scripts/guards/check_invariant_core.mjs
+- /private<WORK_DIR>/scripts/guards/check_development_slots.mjs
+- /private<WORK_DIR>/scripts/guards/check_task_lifecycle_hooks.mjs
+- /private<WORK_DIR>/scripts/guards/check_acp_pack_compat.mjs
+- /private<WORK_DIR>/scripts/guards/check_mcp_toolkit_compat.mjs
+- /private<WORK_DIR>/scripts/guards/check_backend_model_baseline.mjs
+- /private<WORK_DIR>/scripts/guards/check_frontend_model_baseline.mjs
+- /private<WORK_DIR>/scripts/guards/check_naming_convention.mjs
+- /private<WORK_DIR>/scripts/guards/check_length_guard.mjs
+- /private<WORK_DIR>/scripts/acp/run_phase.mjs
+- /private<WORK_DIR>/scripts/acp/list_mcp_tools.mjs
+- /private<WORK_DIR>/scripts/acp/install_mcp_tools.mjs
+- /private<WORK_DIR>/scripts/acp/run_workflow_stage.mjs
+- /private<WORK_DIR>/scripts/acp/show_workflow_commands.mjs
+package.json wiring unchanged: already present
+active provider profile: gemini_cli (source=flag)
+provider native MCP config written: <FAKE_HOME>/.gemini/settings.json
+provider command pack written: created=7 skipped=0
+provider native hooks skipped: provider gemini_cli uses wrapper-only lifecycle routing

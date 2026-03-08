@@ -1,0 +1,61 @@
+{
+  "provider_id": "codex_cli",
+  "tools": [
+    {
+      "tool_id": "tool.search.web",
+      "capability": "web_search",
+      "default_command": "npx -y websearch-mcp",
+      "npm_package": "websearch-mcp",
+      "route_mode": "native_or_wrapper",
+      "route_handler": "mcp_open_websearch_or_npx_wrapper"
+    },
+    {
+      "tool_id": "tool.docs.context",
+      "capability": "documentation_context",
+      "default_command": "npx -y @upstash/context7-mcp",
+      "npm_package": "@upstash/context7-mcp",
+      "route_mode": "native_or_wrapper",
+      "route_handler": "mcp_context7_or_npx_wrapper"
+    },
+    {
+      "tool_id": "tool.code.semantic",
+      "capability": "semantic_code_ops",
+      "default_command": "uvx --from git+https://github.com/oraios/serena serena start-mcp-server --context ide-assistant",
+      "npm_package": "",
+      "route_mode": "native_or_wrapper",
+      "route_handler": "mcp_serena_or_uvx_wrapper"
+    },
+    {
+      "tool_id": "tool.repo.knowledge",
+      "capability": "repository_knowledge",
+      "default_command": "https://mcp.deepwiki.com/mcp",
+      "npm_package": "",
+      "route_mode": "native_or_wrapper",
+      "route_handler": "mcp_deepwiki_or_remote_wrapper"
+    },
+    {
+      "tool_id": "tool.browser.playwright",
+      "capability": "browser_testing",
+      "default_command": "npx -y @playwright/mcp@latest",
+      "npm_package": "@playwright/mcp",
+      "route_mode": "native_or_wrapper",
+      "route_handler": "mcp_playwright_or_npx_wrapper"
+    },
+    {
+      "tool_id": "tool.search.repo",
+      "capability": "search",
+      "default_command": "rg --files",
+      "npm_package": "",
+      "route_mode": "native_or_wrapper",
+      "route_handler": "mcp_native_search_or_rg_wrapper"
+    },
+    {
+      "tool_id": "tool.test.runner",
+      "capability": "testing",
+      "default_command": "npm test",
+      "npm_package": "",
+      "route_mode": "wrapper",
+      "route_handler": "npm_test_wrapper"
+    }
+  ]
+}

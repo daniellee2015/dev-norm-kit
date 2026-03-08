@@ -1,0 +1,4 @@
+description = "Run session->run->done in one command."
+prompt = """
+!{npm run norm:dev:full-cycle}
+"""

@@ -1,0 +1,10 @@
+mode=explicit
+expected_provider=codex_cli
+active_provider=codex_cli
+source=flag
+phase_count=3
+mcp_tool_count=7
+native_config_path=.codex/config.toml
+command_marker_path=.agents/skills/dev-clarify/SKILL.md
+hook_marker_path=none
+package_tgz=waoooolab-dev-norm-kit-0.1.0.tgz

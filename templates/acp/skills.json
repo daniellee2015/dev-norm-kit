@@ -1,0 +1,35 @@
+{
+  "schema_version": "acp_skill_pack.v1",
+  "profile_id": "dev-norm-kit",
+  "skills": [
+    {
+      "skill_id": "skill.session.prepare",
+      "purpose": "Prepare session context and run minimal registry checks before execution.",
+      "trigger_phase": "session_start",
+      "required_command_ids": [
+        "cmd.norm.registry-guard"
+      ],
+      "required": true
+    },
+    {
+      "skill_id": "skill.task.clarify-or-start",
+      "purpose": "Stay in conversation until readiness fields are complete, then enter running by policy.",
+      "trigger_phase": "task_start",
+      "role_hint": "lead",
+      "delegation_mode": "provider_defined",
+      "required_command_ids": [
+        "cmd.norm.lifecycle-guard"
+      ],
+      "required": true
+    },
+    {
+      "skill_id": "skill.task.finish-and-report",
+      "purpose": "Run completion guards and produce structured completion evidence.",
+      "trigger_phase": "task_finish",
+      "required_command_ids": [
+        "cmd.norm.verify"
+      ],
+      "required": true
+    }
+  ]
+}

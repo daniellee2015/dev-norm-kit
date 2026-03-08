@@ -1,0 +1,4 @@
+description = "Finish execution stage and validate completion."
+prompt = """
+!{npm run norm:dev:verify}
+"""
