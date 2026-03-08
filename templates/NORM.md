@@ -9,6 +9,12 @@ It is not a semantic baseline document.
 2. `baseline standard`
 3. `guard execution`
 
+Session start rule:
+1. DNK mode activation is implicit when `.dev-norm-kit/NORM.md` exists.
+2. no explicit keyword (`dnk`, `/dev-clarify`) is required to begin DNK conversation flow.
+3. first turn must begin in `conversation` stage and collect readiness fields:
+   `objective`, `done_when`, `constraints`, `output_format`.
+
 ## 2) Read Order (Authoritative Sources)
 
 1. `.dev-norm-kit/config.json`
